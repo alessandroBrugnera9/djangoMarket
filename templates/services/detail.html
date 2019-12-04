@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Serviço</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1" style="background-image: none">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <link rel="stylesheet"
+                              href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+                              integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+                              crossorigin="anonymous">
+                        <div class="container-fluid">
+                            <h1 style="">
+                                <b>
+                                    {{ object.title }}
+                                </b>
+
+                            </h1>
+                            {% if object.image %}
+                                <img style="max-width: 60%" src="{{ object.image.url }}" class="img-fluid">
+                                {#TODO se tiver imagem#}
+                            {% else %}
+                                <h2>Sem Imagem</h2>
+                                <br>
+                            {% endif %}
+
+                            <br><br>
+                            <h2 style="font-size: 16px;color: black">
+                                {{ object.description }}
+                                <br>
+                            </h2>
+                            <h2>
+                                R${{ object.price }} {{ object.priceType }}
+                            </h2>
+                            <h1>
+                                {{ object.telephone }}
+                                <br>
+                            </h1>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
